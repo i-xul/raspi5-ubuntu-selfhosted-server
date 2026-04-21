@@ -1,0 +1,36 @@
+services:
+  db:
+    image: postgres:16
+    container_name: nextcloud-db
+    restart: unless-stopped
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: "nextcloud"
+      POSTGRES_USER: "nextcloud_user"
+      POSTGRES_PASSWORD: "change_this_password"
+
+  app:
+    image: nextcloud:29
+    container_name: nextcloud
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    volumes:
+      - ./nextcloud:/var/www/html
+    environment:
+      POSTGRES_HOST: "db"
+      POSTGRES_DB: "nextcloud"
+      POSTGRES_USER: "nextcloud_user"
+      POSTGRES_PASSWORD: "change_this_password"
+      NEXTCLOUD_TRUSTED_DOMAINS: "localhost 127.0.0.1 example.local"
+
+  cron:
+    image: nextcloud:29
+    container_name: nextcloud-cron
+    restart: unless-stopped
+    volumes:
+      - ./nextcloud:/var/www/html
+    entrypoint: /cron.sh
