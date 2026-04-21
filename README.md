@@ -37,6 +37,14 @@ Example views from the running system:
 
 ---
 
+## 🐳 Example Docker Configuration
+
+Example Docker Compose configurations used in this setup can be found in the `docker/` directory.
+
+These are simplified and sanitized versions of the actual production setup.
+
+---
+
 ## 🗂️ Architecture
 
 - Docker-based service isolation
@@ -54,14 +62,6 @@ Key lessons:
 - Incorrect mounts can silently break applications
 - Services may detect files without being able to access them
 - Proper `/etc/fstab` configuration is critical for reliability
-
----
-
-## 🐳 Example Docker Configuration
-
-Example Docker Compose configurations used in this setup can be found in the `docker/` directory.
-
-These are simplified and sanitized versions of the actual production setup.
 
 ---
 
