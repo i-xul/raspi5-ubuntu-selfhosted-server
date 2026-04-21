@@ -26,6 +26,17 @@ The server hosts multiple self-hosted services:
 
 ---
 
+## Screenshots
+
+Example views from the running system:
+
+![Dashboard](docs/images/dashboard.png)
+![Nextcloud](docs/images/nextcloud.png)
+![Kavita](docs/images/kavita.png)
+![Navidrome](docs/images/navidrome.png)
+
+---
+
 ## 🗂️ Architecture
 
 - Docker-based service isolation
