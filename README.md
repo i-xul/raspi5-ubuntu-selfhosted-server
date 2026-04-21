@@ -57,6 +57,14 @@ Key lessons:
 
 ---
 
+## 🐳 Example Docker Configuration
+
+Example Docker Compose configurations used in this setup can be found in the `docker/` directory.
+
+These are simplified and sanitized versions of the actual production setup.
+
+---
+
 ## 🌐 Remote Access
 
 Initially tested with NordVPN Meshnet, but transitioned to Tailscale due to:
